@@ -4,9 +4,6 @@
 \name{Africa-tilemap-package}
 \alias{Africa-tilemap-package}
 \title{Create Tilemaps of Africa!}
-\description{
-Create Tilemaps of Africa!
-}
 \author{
 Joshua de la Bruere (Joshua@delabj.com)
 

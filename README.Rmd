@@ -1,41 +1,50 @@
-AfricaCountryBins
-================
+---
+title: "AfricaCountryBins"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.retina = 2,
+  fig.path = "man/figures/README-",
+  collapse = TRUE
+)
+```
 
 Create Uniform Square Country Cartogram heatmaps
 
 ## Description
 
-Heatmaps in a tile shape are an alternative to choropleth maps that
-don’t distort based on land mass size.
+Heatmaps in a tile shape are an alternative to choropleth maps that don't distort based on land mass size.
 
-This package is a essentially a fork of [Bob Rudis’s statebins
-package](https://github.com/hrbrmstr/statebin) designed for use for data
-involving Africa.
+This package is a essentially a fork of [Bob Rudis's statebins package](https://github.com/hrbrmstr/statebin) designed for use for data involving Africa. 
 
-This grid attempts to preserve the general position of countries on the
-contienet, while providing an equal area by country.
+This grid attempts to preserve the general position of countries on the contienet, while providing an equal area by country.
 
 ## Whatcha Get?
 
-The main function implemented is - `geom_countrybins_africa`: which is a
-countrybin Geom for africa
+The main function implemented is 
+ - `geom_countrybins_africa`: which is a countrybin Geom for africa
+ 
+Sample dataset `africa_mines` (see `?africa_mines` for details)
 
 ## Installation
 
-Use the following to install:
-
-``` r
+Use the following to install: 
+```{r eval=FALSE}
 devtools::install_github("delabj/AfricaCountryBins")
 # or 
 remotes::install_github("delabj/AfricaCountryBins")
 ```
 
-To use these options you’ll have to install devtools or remotes
-respectively.
+To use these options you'll have to install devtools or remotes respectively. 
 
 ## Examples
 
-``` r
+```{r ex-01, fig.width=600/96, fig.height=600/96}
 library(AfricaCountryBins)
 library(hrbrthemes)
 library(tidyverse)
@@ -73,9 +82,7 @@ count(africa_mines, countrycode, wt=count) %>%
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
-<img src="man/figures/README-ex-01-1.png" width="600" />
-
-``` r
+```{r ex-02, fig.width=1200/96, fig.height=1200/96}
 africa_mines %>%
   count(countrycode, mine_type, wt = count) %>%
   mutate(mine_type = fct_reorder(mine_type, n, sum)) %>%
@@ -111,5 +118,3 @@ africa_mines %>%
   theme(axis.text.x = element_blank()) +
   theme(axis.text.y = element_blank())
 ```
-
-<img src="man/figures/README-ex-02-1.png" width="1200" />
