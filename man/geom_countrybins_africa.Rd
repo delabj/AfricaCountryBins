@@ -5,7 +5,9 @@
 \alias{geom_countrybins_africa}
 \alias{GeomcountrybinsAfrica}
 \title{A countrybins of Africa}
-\format{An object of class \code{GeomcountrybinsAfrica} (inherits from \code{Geom}, \code{ggproto}, \code{gg}) of length 7.}
+\format{
+An object of class \code{GeomcountrybinsAfrica} (inherits from \code{Geom}, \code{ggproto}, \code{gg}) of length 7.
+}
 \usage{
 geom_countrybins_africa(
   mapping = NULL,
