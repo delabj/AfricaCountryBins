@@ -4,17 +4,17 @@ Title: Create a countrybin map of Africa
 Version: 0.1.0
 Authors@R: c(
     person("Joshua", "de la Bruere", email = "joshua@delabj.com", role = c("aut", "cre"), 
-    comment = "Modified Statebins for use with map of Africa"),
+    comment = "Modified statebins for use with Africa"),
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut"), 
            comment = c(ORCID = "0000-0001-5670-2640", "created Statebins"))
   )
 Maintainer: Joshua de la Bruere <Joshua@delabj.com>
-Description: Heatmapes in a tile shape are an alternative to choropleth maps that don't distort based on land mas size
+Description: Heatmaps in a tile shape are an alternative to choropleth maps that don't distort based on land mas size
     This package is a fork of Bob Rudis's statebins package designed for use for data involving Africa. This grid 
     attempts to preserve the general position of countries on the contienet, while providing an equal area by country. 
-URL: https:://github.com/delabj/AfricaCountryeBins
-BugReports: https:://github.com/delabj/AfricaCountryeBins/issues
-License: MIT 
+URL: https://github.com/delabj/AfricaCountryeBins
+BugReports: https://github.com/delabj/AfricaCountryeBins/issues
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 suggests: 
@@ -28,4 +28,7 @@ Imports:
     ggplot2 (>= 2.2.1),
     scales (>= 0.5.0),
     grid
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
