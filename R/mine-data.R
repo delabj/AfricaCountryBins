@@ -10,5 +10,5 @@
 #'   \item{adm2}{ADM2 code}
 #'   \item{count}{# mines}
 #' }
-#' @source \url{https://data.world/datainspace/mines-in-africa}
+#' @source <https://data.world/datainspace/mines-in-africa>
 "africa_mines"

@@ -1,7 +1,7 @@
 #' A tilemap of Africa
-#'
+#' @md `r lifecycle::badge("superseded")`
 #' @description
-#' Based off the work of \href{https://github.com/hrbrmstr/statebins}{Bob Rudis's Statebins} this package aims to create a workable tile map of Africa for ggplot2.
+#' Based off the work of [Bob Rudis's Statebins](https://github.com/hrbrmstr/statebins) this package aims to create a workable tile map of Africa for ggplot2.
 #' Simply pass in a dataframe containing countries and values to measure, and this geom will create a simple map. This allows for easy faceting and allows a uniform legend across all plots.
 #'
 #' Much like the origional statebins package, there are two critical `aes()` mappings: \cr
@@ -62,6 +62,8 @@ geom_africa_tilemap <- function(
                          show.legend = NA,
                          inherit.aes = TRUE
                          ){
+  usethis::ui_info("The function 'geom_africa_tilemap()' has been depreciated. Please use 'geom_africa_countrybin()'")
+
   ggplot2::layer(
     data = data,
     mapping = mapping,
