@@ -1,6 +1,8 @@
 #' A tilemap of Africa
 #' @md `r lifecycle::badge("superseded")`
 #' @description
+#'
+#' This function was created before the naming convention of countrybins was added. It has been superseded by the geom_countrybins_africa() function.
 #' Based off the work of [Bob Rudis's Statebins](https://github.com/hrbrmstr/statebins) this package aims to create a workable tile map of Africa for ggplot2.
 #' Simply pass in a dataframe containing countries and values to measure, and this geom will create a simple map. This allows for easy faceting and allows a uniform legend across all plots.
 #'

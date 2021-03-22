@@ -4,7 +4,7 @@
 \name{geom_countrybins_africa}
 \alias{geom_countrybins_africa}
 \alias{GeomcountrybinsAfrica}
-\title{A countrybins of Africa}
+\title{A country-bins map of Africa}
 \format{
 An object of class \code{GeomcountrybinsAfrica} (inherits from \code{Geom}, \code{ggproto}, \code{gg}) of length 7.
 }
@@ -88,17 +88,35 @@ Much like the origional statebins package, there are two critical \code{aes()} m
 }
 \examples{
 \dontrun{
+library(tidyverse)
+library(africaCountryBins)
+library(hrbrthemes)
 
-library(AfricaCountryBins)
-library(ggplot2)
+data("africa_mines")
 
-data <- fake_data
-
-ggplot(data, aes(country = country_code, fill = value))+
-    geom_countrybins_africa()+
-    theme_void()
-
+count(africa_mines, countrycode, wt=count) \%>\%
+  mutate(n = ifelse(n == 0, NA, n)) \%>\%
+  ggplot(aes(country = countrycode, fill = n)) +
+  geom_countrybins_africa() +
+  coord_fixed() +
+  scale_fill_viridis_c(
+      name = "# mines (log2)",
+      option = "magma",
+      direction = -1,
+      na.value = "#DEE5E8",
+      trans = "log2",
+      label = scales::comma_format(1)
+   ) +
+   guides(
+       fill = guide_colourbar(
+       title.position = "top"
+       )
+   ) +
+   labs(
+       title = "Mines in Africa",
+       caption = "Source: data.world <hdata.world/datainspace/mines-in-africa>"
+   ) +
+     theme_minimal()
 }
-
 }
 \keyword{datasets}

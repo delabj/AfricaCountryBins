@@ -27,8 +27,10 @@ Depends:
 Imports:
     ggplot2 (>= 2.2.1),
     scales (>= 0.5.0),
-    grid
+    grid,
+    usethis
 RoxygenNote: 7.1.1
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)

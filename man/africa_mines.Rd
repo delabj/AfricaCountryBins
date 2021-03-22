@@ -9,12 +9,12 @@ district in Africa
 \format{
 A data frame with 88920 rows and 6 variables:
 \describe{
-  \item{countrycode}{iso3c country code}
-  \item{mine_type}{type of mine}
-  \item{countryname}{country name}
-  \item{adm1}{ADM1 code}
-  \item{adm2}{ADM2 code}
-  \item{count}{# mines}
+\item{countrycode}{iso3c country code}
+\item{mine_type}{type of mine}
+\item{countryname}{country name}
+\item{adm1}{ADM1 code}
+\item{adm2}{ADM2 code}
+\item{count}{# mines}
 }
 }
 \source{

@@ -1,10 +1,16 @@
-#' Create Tilemaps of Africa!
+#' Create Country Bin maps of Africa!
 #'
 #' @md
-#' @name Africa-tilemap-package
+#' @name AfricaCountryBins-package
 #' @docType package
 #' @author Joshua de la Bruere (Joshua@@delabj.com)
 #' @author Bob Rudis (bob@@rud.is)
+#'
+#' @description Create tile heatmaps as an alternative to choropleth maps to avoid distorted intuition
+#'  based on land mass size
+#'  This package is a modified version of Bob Rudis's statebins package, designed for use for data involving countries in
+#'  Africa. This grid attempts to preserve the general position of countries on the continent, while providing an equal
+#'  area by country.
 #' @importFrom grid unit
 #' @importFrom scales alpha
 #' @importFrom ggplot2 ggplot geom_tile scale_fill_manual guides geom_tile ggplotGrob

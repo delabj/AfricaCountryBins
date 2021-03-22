@@ -1,7 +1,7 @@
-#' A countrybins of Africa
+#' A country-bins map of Africa
 #'
 #' @description
-#' Based off the work of \href{https://github.com/hrbrmstr/statebins}{Bob Rudis's Statebins} this package aims to create a workable tile map of Africa for ggplot2.
+#' Based off the work of [Bob Rudis's Statebins](https://github.com/hrbrmstr/statebins) this package aims to create a workable tile map of Africa for ggplot2.
 #' Simply pass in a dataframe containing countries and values to measure, and this geom will create a simple map. This allows for easy faceting and allows a uniform legend across all plots.
 #'
 #' Much like the origional statebins package, there are two critical `aes()` mappings: \cr
@@ -50,18 +50,36 @@
 #'   the default plot specification, e.g. `borders()`.
 #'
 #' @examples \dontrun{
+#' library(tidyverse)
+#' library(africaCountryBins)
+#' library(hrbrthemes)
 #'
-#' library(AfricaCountryBins)
-#' library(ggplot2)
+#' data("africa_mines")
 #'
-#' data <- fake_data
-#'
-#' ggplot(data, aes(country = country_code, fill = value))+
-#'     geom_countrybins_africa()+
-#'     theme_void()
-#'
+#' count(africa_mines, countrycode, wt=count) %>%
+#'   mutate(n = ifelse(n == 0, NA, n)) %>%
+#'   ggplot(aes(country = countrycode, fill = n)) +
+#'   geom_countrybins_africa() +
+#'   coord_fixed() +
+#'   scale_fill_viridis_c(
+#'       name = "# mines (log2)",
+#'       option = "magma",
+#'       direction = -1,
+#'       na.value = "#DEE5E8",
+#'       trans = "log2",
+#'       label = scales::comma_format(1)
+#'    ) +
+#'    guides(
+#'        fill = guide_colourbar(
+#'        title.position = "top"
+#'        )
+#'    ) +
+#'    labs(
+#'        title = "Mines in Africa",
+#'        caption = "Source: data.world <hdata.world/datainspace/mines-in-africa>"
+#'    ) +
+#'      theme_minimal()
 #' }
-#'
 #' @export
 geom_countrybins_africa <- function(
   mapping = NULL,

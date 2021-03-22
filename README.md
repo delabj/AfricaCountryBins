@@ -1,24 +1,29 @@
 AfricaCountryBins
 ================
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/delabj/AfricaCountryBins/workflows/R-CMD-check/badge.svg)](https://github.com/delabj/AfricaCountryBins/actions)
+
 Create Uniform Square Country Cartogram heatmaps
 
 ## Description
 
 Heatmaps in a tile shape are an alternative to choropleth maps that
-don’t distort perception of results based on land mass size.
+don’t distort based on land mass size.
 
 This package is a essentially a fork of [Bob Rudis’s statebins
 package](https://github.com/hrbrmstr/statebin) designed for use for data
 involving Africa.
 
 This grid attempts to preserve the general position of countries on the
-continent, while providing an equal area by country.
+contienet, while providing an equal area by country.
 
 ## Whatcha Get?
 
 The main function implemented is - `geom_countrybins_africa`: which is a
 countrybin Geom for africa
+
+Sample dataset `africa_mines` (see `?africa_mines` for details)
 
 ## Installation
 
